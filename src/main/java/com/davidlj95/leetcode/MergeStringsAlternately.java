@@ -1,4 +1,4 @@
-package com.davidlj95;
+package com.davidlj95.leetcode;
 
 // https://leetcode.com/problems/merge-strings-alternately (1768)
 public class MergeStringsAlternately {
