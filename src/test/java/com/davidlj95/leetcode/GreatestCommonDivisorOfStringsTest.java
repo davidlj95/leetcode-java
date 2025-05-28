@@ -18,8 +18,8 @@ class GreatestCommonDivisorOfStringsTest {
 
     @ParameterizedTest
     @FieldSource("TEST_CASES")
-    void gcdOfStrings(TestCase testCase) {
-        assertEquals(testCase.expected(), GreatestCommonDivisorOfStrings.gcdOfStrings(testCase.str1(), testCase.str2()));
+    void commonDivisorThenMultiply(TestCase testCase) {
+        assertEquals(testCase.expected(), GreatestCommonDivisorOfStrings.commonDivisorThenMultiply(testCase.str1(), testCase.str2()));
     }
 
     record TestCase(String str1, String str2, String expected) {

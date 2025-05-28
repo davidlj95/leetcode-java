@@ -2,7 +2,12 @@ package com.davidlj95.leetcode;
 
 // https://leetcode.com/problems/greatest-common-divisor-of-strings/ (1071)
 public class GreatestCommonDivisorOfStrings {
+    @SuppressWarnings("unused")
     public static String gcdOfStrings(String str1, String str2) {
+        return commonDivisorThenMultiply(str1, str2);
+    }
+
+    public static String commonDivisorThenMultiply(String str1, String str2) {
         String[] divisors = {getDivisor(str1), getDivisor(str2)};
 
         if (!divisors[0].equals(divisors[1])) return "";
