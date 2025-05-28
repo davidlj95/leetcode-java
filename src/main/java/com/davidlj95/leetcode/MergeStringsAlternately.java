@@ -7,6 +7,7 @@ public class MergeStringsAlternately {
         return commonAndThenRest(word1, word2);
     }
 
+    // Own
     public static String loopAndCheck(String word1, String word2) {
         var result = new StringBuilder();
         var maxLength = Math.max(word1.length(), word2.length());
@@ -22,6 +23,7 @@ public class MergeStringsAlternately {
         return result.toString();
     }
 
+    // After checking LeetCode's submissions
     public static String commonAndThenRest(String word1, String word2) {
         var result = new StringBuilder();
         var commonLength = Math.min(word1.length(), word2.length());

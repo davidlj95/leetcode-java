@@ -7,6 +7,7 @@ public class GreatestCommonDivisorOfStrings {
         return commonDivisorThenMultiply(str1, str2);
     }
 
+    // Own
     public static String commonDivisorThenMultiply(String str1, String str2) {
         String[] divisors = {getDivisor(str1), getDivisor(str2)};
 
@@ -40,5 +41,21 @@ public class GreatestCommonDivisorOfStrings {
             if (j == str.length()) return pattern.toString();
         }
         return str;
+    }
+
+    // LeetCode's editorial bruteforce
+    public static String bruteForce(String str1, String str2) {
+        var gcd = str1.length() > str2.length() ? str2 : str1;
+        while (!gcd.isEmpty()) {
+            if (str1.length() % gcd.length() == 0 && str2.length() % gcd.length() == 0) {
+                var ratioStr1 = str1.length() / gcd.length();
+                var ratioStr2 = str2.length() / gcd.length();
+                if (gcd.repeat(ratioStr1).equals(str1) && gcd.repeat(ratioStr2).equals(str2)) {
+                    return gcd;
+                }
+            }
+            gcd = gcd.substring(0, gcd.length() - 1);
+        }
+        return "";
     }
 }
