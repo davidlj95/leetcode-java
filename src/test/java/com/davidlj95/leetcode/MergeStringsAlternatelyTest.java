@@ -15,8 +15,8 @@ class MergeStringsAlternatelyTest {
 
     @ParameterizedTest
     @FieldSource("TEST_CASES")
-    void byLoopAndCheck(TestCase testCase) {
-        assertEquals(MergeStringsAlternately.byLoopAndCheck(testCase.word1(), testCase.word2()), testCase.expected());
+    void loopAndCheck(TestCase testCase) {
+        assertEquals(MergeStringsAlternately.loopAndCheck(testCase.word1(), testCase.word2()), testCase.expected());
     }
 
     @ParameterizedTest

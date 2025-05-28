@@ -7,7 +7,7 @@ public class MergeStringsAlternately {
         return commonAndThenRest(word1, word2);
     }
 
-    public static String byLoopAndCheck(String word1, String word2) {
+    public static String loopAndCheck(String word1, String word2) {
         var result = new StringBuilder();
         var maxLength = Math.max(word1.length(), word2.length());
         for (var i = 0; i < maxLength; i++) {
