@@ -28,6 +28,13 @@ class GreatestCommonDivisorOfStringsTest {
         assertEquals(testCase.expected(), GreatestCommonDivisorOfStrings.bruteForce(testCase.str1(), testCase.str2()));
     }
 
+    @ParameterizedTest
+    @FieldSource("TEST_CASES")
+    void intuition(TestCase testCase) {
+        assertEquals(testCase.expected(), GreatestCommonDivisorOfStrings.intuition(testCase.str1(), testCase.str2()));
+    }
+
+
     record TestCase(String str1, String str2, String expected) {
     }
 }
