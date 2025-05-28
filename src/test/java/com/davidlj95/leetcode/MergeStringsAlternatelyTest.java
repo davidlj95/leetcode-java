@@ -16,13 +16,13 @@ class MergeStringsAlternatelyTest {
     @ParameterizedTest
     @FieldSource("TEST_CASES")
     void loopAndCheck(TestCase testCase) {
-        assertEquals(MergeStringsAlternately.loopAndCheck(testCase.word1(), testCase.word2()), testCase.expected());
+        assertEquals(testCase.expected(), MergeStringsAlternately.loopAndCheck(testCase.word1(), testCase.word2()));
     }
 
     @ParameterizedTest
     @FieldSource("TEST_CASES")
     void commonAndThenRest(TestCase testCase) {
-        assertEquals(MergeStringsAlternately.commonAndThenRest(testCase.word1(), testCase.word2()), testCase.expected());
+        assertEquals(testCase.expected(), MergeStringsAlternately.commonAndThenRest(testCase.word1(), testCase.word2()));
     }
 
     record TestCase(String word1, String word2, String expected) {
