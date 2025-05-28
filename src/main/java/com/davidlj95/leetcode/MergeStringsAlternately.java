@@ -2,6 +2,11 @@ package com.davidlj95.leetcode;
 
 // https://leetcode.com/problems/merge-strings-alternately (1768)
 public class MergeStringsAlternately {
+    @SuppressWarnings("unused")
+    public static String mergeAlternately(String word1, String word2) {
+        return commonAndThenRest(word1, word2);
+    }
+
     public static String byLoopAndCheck(String word1, String word2) {
         var result = new StringBuilder();
         var maxLength = Math.max(word1.length(), word2.length());
