@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.FieldSource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MergeStringsAlternatelyTest {
-    @SuppressWarnings({"unused"})
+    @SuppressWarnings({"unused", "SpellCheckingInspection"})
     static final TestCase[] TEST_CASES = {
             new TestCase("abc", "pqr", "apbqcr"),
             new TestCase("ab", "pqrs", "apbqrs"),
