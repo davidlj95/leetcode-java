@@ -11,7 +11,10 @@ public class CanPlaceFlowers {
                 flowerbed[i] = 1;
                 availableFlowerbeds++;
             }
+            if (availableFlowerbeds >= n) {
+                return true;
+            }
         }
-        return n <= availableFlowerbeds;
+        return false;
     }
 }
