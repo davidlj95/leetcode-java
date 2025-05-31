@@ -2,20 +2,21 @@ package com.davidlj95.leetcode;
 
 public class ReverseVowelsOfString {
     public static String reverseVowels(String s) {
-        var j = s.length() - 1;
-        var result = new StringBuilder(s);
+        var result = s.toCharArray();
+        var j = result.length - 1;
         for (int i = 0; i < j; i++) {
-            if (!isVowel(s.charAt(i))) {
+            if (!isVowel(result[i])) {
                 continue;
             }
-            while (j > i && !isVowel(s.charAt(j))) {
+            while (j > i && !isVowel(result[j])) {
                 j--;
             }
-            result.setCharAt(i, s.charAt(j));
-            result.setCharAt(j, s.charAt(i));
+            char tmp = result[i];
+            result[i] = result[j];
+            result[j] = tmp;
             j--;
         }
-        return result.toString();
+        return String.valueOf(result);
     }
 
     private static Boolean isVowel(char c) {
