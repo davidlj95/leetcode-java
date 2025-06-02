@@ -19,19 +19,19 @@ class GreatestCommonDivisorOfStringsTest {
     @ParameterizedTest
     @FieldSource("TEST_CASES")
     void commonDivisorThenMultiply(TestCase testCase) {
-        assertEquals(testCase.expected(), GreatestCommonDivisorOfStrings.commonDivisorThenMultiply(testCase.str1(), testCase.str2()));
+        assertEquals(testCase.expected, GreatestCommonDivisorOfStrings.commonDivisorThenMultiply(testCase.str1, testCase.str2));
     }
 
     @ParameterizedTest
     @FieldSource("TEST_CASES")
     void bruteForce(TestCase testCase) {
-        assertEquals(testCase.expected(), GreatestCommonDivisorOfStrings.bruteForce(testCase.str1(), testCase.str2()));
+        assertEquals(testCase.expected, GreatestCommonDivisorOfStrings.bruteForce(testCase.str1, testCase.str2));
     }
 
     @ParameterizedTest
     @FieldSource("TEST_CASES")
     void intuition(TestCase testCase) {
-        assertEquals(testCase.expected(), GreatestCommonDivisorOfStrings.intuition(testCase.str1(), testCase.str2()));
+        assertEquals(testCase.expected, GreatestCommonDivisorOfStrings.intuition(testCase.str1, testCase.str2));
     }
 
 

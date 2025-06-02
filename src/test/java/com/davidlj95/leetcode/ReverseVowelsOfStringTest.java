@@ -14,7 +14,7 @@ class ReverseVowelsOfStringTest {
     @ParameterizedTest
     @FieldSource("TEST_CASES")
     void reverseVowels(TestCase testCase) {
-        assertEquals(testCase.expected(), ReverseVowelsOfString.reverseVowels(testCase.str));
+        assertEquals(testCase.expected, ReverseVowelsOfString.reverseVowels(testCase.str));
     }
 
     record TestCase(String str, String expected) {

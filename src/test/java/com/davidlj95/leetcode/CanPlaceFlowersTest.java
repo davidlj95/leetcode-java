@@ -18,7 +18,7 @@ class CanPlaceFlowersTest {
     @ParameterizedTest
     @FieldSource("TEST_CASES")
     void canPlaceFlowers(TestCase testCase) {
-        assertEquals(testCase.expected(), CanPlaceFlowers.canPlaceFlowers(testCase.flowerbed, testCase.n));
+        assertEquals(testCase.expected, CanPlaceFlowers.canPlaceFlowers(testCase.flowerbed, testCase.n));
     }
 
     record TestCase(int[] flowerbed, int n, boolean expected) {

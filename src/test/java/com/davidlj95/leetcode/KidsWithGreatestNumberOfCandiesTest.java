@@ -18,13 +18,13 @@ class KidsWithGreatestNumberOfCandiesTest {
     @ParameterizedTest
     @FieldSource("TEST_CASES")
     void kidsWithCandies(TestCase testCase) {
-        assertEquals(testCase.expected(), KidsWithGreatestNumberOfCandies.streamy(testCase.candies(), testCase.extraCandies()));
+        assertEquals(testCase.expected, KidsWithGreatestNumberOfCandies.streamy(testCase.candies, testCase.extraCandies));
     }
 
     @ParameterizedTest
     @FieldSource("TEST_CASES")
     void oldFashionButMorePerformant(TestCase testCase) {
-        assertEquals(testCase.expected(), KidsWithGreatestNumberOfCandies.oldFashionButMorePerformant(testCase.candies(), testCase.extraCandies()));
+        assertEquals(testCase.expected, KidsWithGreatestNumberOfCandies.oldFashionButMorePerformant(testCase.candies, testCase.extraCandies));
     }
 
     record TestCase(int[] candies, int extraCandies, List<Boolean> expected) {
