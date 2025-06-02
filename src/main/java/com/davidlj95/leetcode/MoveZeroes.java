@@ -30,12 +30,12 @@ public class MoveZeroes {
     }
 
     public static void optimal(int[] nums) {
-        for (int i = 0, lastNonZeroElement = 0; i < nums.length; i++) {
+        for (int i = 0, lastNonZeroIndex = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
-                var tmp = nums[lastNonZeroElement];
-                nums[lastNonZeroElement] = nums[i];
+                var tmp = nums[lastNonZeroIndex];
+                nums[lastNonZeroIndex] = nums[i];
                 nums[i] = tmp;
-                lastNonZeroElement++;
+                lastNonZeroIndex++;
             }
         }
     }
