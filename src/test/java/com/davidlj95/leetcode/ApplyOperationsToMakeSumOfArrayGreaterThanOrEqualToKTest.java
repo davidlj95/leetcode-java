@@ -29,6 +29,12 @@ class ApplyOperationsToMakeSumOfArrayGreaterThanOrEqualToKTest {
         assertEquals(testCase.expected, ApplyOperationsToMakeSumOfArrayGreaterThanOrEqualToK.constantComplexity(testCase.k));
     }
 
+    @ParameterizedTest
+    @FieldSource("TEST_CASES")
+    void constantChatGpt(TestCase testCase) {
+        assertEquals(testCase.expected, ApplyOperationsToMakeSumOfArrayGreaterThanOrEqualToK.constantChatGpt(testCase.k));
+    }
+
     record TestCase(int k, int expected) {
     }
 }

@@ -72,4 +72,12 @@ public class ApplyOperationsToMakeSumOfArrayGreaterThanOrEqualToK {
         var y = Math.ceil(k / x);
         return (int) (x + y - 2);
     }
+
+    // Enabling think. Otherwise, it doesn't solve it.
+    public static int constantChatGpt(int k) {
+        var m = (int) Math.sqrt(k);
+        if (m * m == k) return 2 * m - 2;
+        if (k <= m * m + m) return 2 * m - 1;
+        return 2 * m;
+    }
 }
