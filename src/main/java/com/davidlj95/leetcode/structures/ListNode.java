@@ -6,21 +6,21 @@ public class ListNode {
     public int val;
     public ListNode next;
 
-    ListNode() {
+    public ListNode() {
     }
 
     @SuppressWarnings("unused")
-    ListNode(int val) {
+    public ListNode(int val) {
         this.val = val;
     }
 
-    ListNode(int val, ListNode next) {
+    public ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
     }
 
     public static ListNode fromIntArray(int[] array) {
-        if (array.length == 0) return new ListNode();
+        if (array.length == 0) return null;
         ListNode node = null;
         for (int i = array.length - 1; i >= 0; i--) {
             node = new ListNode(array[i], node);
