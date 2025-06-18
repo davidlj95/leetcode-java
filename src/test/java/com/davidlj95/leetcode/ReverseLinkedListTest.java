@@ -1,5 +1,6 @@
 package com.davidlj95.leetcode;
 
+import com.davidlj95.leetcode.structures.ListNode;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.FieldSource;
 
@@ -16,7 +17,7 @@ class ReverseLinkedListTest {
     @ParameterizedTest
     @FieldSource("TEST_CASES")
     void reverseList(TestCase testCase) {
-        assertEquals(ReverseLinkedList.ListNode.fromIntArray(testCase.expected), ReverseLinkedList.reverseList(ReverseLinkedList.ListNode.fromIntArray(testCase.input)));
+        assertEquals(ListNode.fromIntArray(testCase.expected), ReverseLinkedList.reverseList(ListNode.fromIntArray(testCase.input)));
     }
 
     record TestCase(int[] input, int[] expected) {
