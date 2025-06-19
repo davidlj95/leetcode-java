@@ -2,6 +2,7 @@ package com.davidlj95.leetcode;
 
 import java.util.LinkedList;
 
+// https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/ (1926)
 public class NearestExitFromEntranceInMaze {
     public static int nearestExit(char[][] maze, int[] entrance) {
         var m = maze.length;

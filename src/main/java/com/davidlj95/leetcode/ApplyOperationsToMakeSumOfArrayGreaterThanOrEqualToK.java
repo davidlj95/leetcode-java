@@ -37,7 +37,7 @@ package com.davidlj95.leetcode;
  * - Brute force x in almost k compute complexity (see {@link #kComplexity}
  * - Compute x in constant time compute complexity (see {@link #constantComplexity})
  *
- * @see <a href="https://leetcode.com/problems/apply-operations-to-make-sum-of-array-greater-than-or-equal-to-k/>LeetCode problem (30913091)</a>
+ * @see <a href="https://leetcode.com/problems/apply-operations-to-make-sum-of-array-greater-than-or-equal-to-k/>LeetCode problem (3091)</a>
  * @see <a href="https://www.youtube.com/watch?v=_5fM6Q_qZ4U">Explanation video</a>
  */
 public class ApplyOperationsToMakeSumOfArrayGreaterThanOrEqualToK {

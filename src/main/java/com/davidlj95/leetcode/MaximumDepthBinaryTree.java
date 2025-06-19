@@ -2,6 +2,7 @@ package com.davidlj95.leetcode;
 
 import com.davidlj95.leetcode.structures.TreeNode;
 
+// https://leetcode.com/problems/maximum-depth-of-binary-tree/ (104)
 public class MaximumDepthBinaryTree {
     public static int maxDepth(TreeNode node) {
         if (node == null) {

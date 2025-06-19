@@ -2,6 +2,7 @@ package com.davidlj95.leetcode;
 
 import com.davidlj95.leetcode.structures.ListNode;
 
+// https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/ (2095)
 public class DeleteMiddleNodeOfLinkedList {
     @SuppressWarnings("unused")
     public static ListNode deleteMiddle(ListNode head) {
