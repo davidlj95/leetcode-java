@@ -2,12 +2,15 @@ package com.davidlj95.leetcode.structures;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class TreeNode {
     public int val;
     public TreeNode left;
     public TreeNode right;
 
+    @SuppressWarnings("unused")
     public TreeNode() {
     }
 
@@ -54,22 +57,34 @@ public class TreeNode {
 
     @Override
     public String toString() {
-        var values = new ArrayList<Integer>();
-        var toVisit = new ArrayList<TreeNode>();
-        toVisit.add(this);
-        while (!toVisit.isEmpty()) {
-            var node = toVisit.remove(0);
+        return this.toIntCollection().toString();
+    }
+
+    public Collection<Integer> toIntCollection() {
+        var ints = new ArrayList<Integer>();
+        Queue<TreeNode> nodes = new LinkedList<>();
+        nodes.offer(this);
+        var nodesToProcess = 1;
+        while (nodesToProcess > 0) {
+            var node = nodes.poll();
             if (node == null) {
-                values.add(null);
+                ints.add(null);
+                nodes.offer(null);
+                nodes.offer(null);
                 continue;
             }
-            values.add(node.val);
-            toVisit.add(node.left);
-            toVisit.add(node.right);
+            ints.add(node.val);
+            nodes.add(node.left);
+            nodes.add(node.right);
+            nodesToProcess--;
+            if (node.left != null) nodesToProcess++;
+            if (node.right != null) nodesToProcess++;
         }
-        while (values.get(values.size() - 1) == null) {
-            values.remove(values.size() - 1);
+        var lastIndex = ints.size() - 1;
+        while (ints.get(lastIndex) == null) {
+            ints.remove(lastIndex);
+            lastIndex--;
         }
-        return values.toString();
+        return ints;
     }
 }
