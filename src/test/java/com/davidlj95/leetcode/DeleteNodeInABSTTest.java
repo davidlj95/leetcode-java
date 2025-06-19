@@ -1,6 +1,7 @@
 package com.davidlj95.leetcode;
 
 
+import com.davidlj95.leetcode.structures.TreeNode;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.FieldSource;
 
@@ -10,17 +11,17 @@ class DeleteNodeInABSTTest {
     @SuppressWarnings("unused")
     static final TestCase[] TEST_CASES = {
             new TestCase(
-                    new DeleteNodeInABST.TreeNode(5,
-                            new DeleteNodeInABST.TreeNode(3,
-                                    new DeleteNodeInABST.TreeNode(2),
-                                    new DeleteNodeInABST.TreeNode(4)
+                    new TreeNode(5,
+                            new TreeNode(3,
+                                    new TreeNode(2),
+                                    new TreeNode(4)
                             ),
-                            new DeleteNodeInABST.TreeNode(6, null, new DeleteNodeInABST.TreeNode(7))
+                            new TreeNode(6, null, new TreeNode(7))
                     ),
                     3,
-                    new DeleteNodeInABST.TreeNode(5,
-                            new DeleteNodeInABST.TreeNode(2, null, new DeleteNodeInABST.TreeNode(4)),
-                            new DeleteNodeInABST.TreeNode(6, null, new DeleteNodeInABST.TreeNode(7))
+                    new TreeNode(5,
+                            new TreeNode(2, null, new TreeNode(4)),
+                            new TreeNode(6, null, new TreeNode(7))
                     )
             )
     };
@@ -31,7 +32,7 @@ class DeleteNodeInABSTTest {
         assertEquals(testCase.expected, DeleteNodeInABST.deleteNode(testCase.root, testCase.key));
     }
 
-    record TestCase(DeleteNodeInABST.TreeNode root, int key, DeleteNodeInABST.TreeNode expected) {
+    record TestCase(TreeNode root, int key, TreeNode expected) {
     }
 
 }

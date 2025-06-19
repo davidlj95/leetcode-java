@@ -1,5 +1,6 @@
 package com.davidlj95.leetcode;
 
+import com.davidlj95.leetcode.structures.TreeNode;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.FieldSource;
 
@@ -9,16 +10,16 @@ class MaximumDepthBinaryTreeTest {
     @SuppressWarnings("unused")
     static final TestCase[] TEST_CASES = {
             new TestCase(
-                    new MaximumDepthBinaryTree.TreeNode(3,
-                            new MaximumDepthBinaryTree.TreeNode(9),
-                            new MaximumDepthBinaryTree.TreeNode(20,
-                                    new MaximumDepthBinaryTree.TreeNode(15),
-                                    new MaximumDepthBinaryTree.TreeNode(7)
+                    new TreeNode(3,
+                            new TreeNode(9),
+                            new TreeNode(20,
+                                    new TreeNode(15),
+                                    new TreeNode(7)
                             )), 3),
             new TestCase(
-                    new MaximumDepthBinaryTree.TreeNode(1,
-                            new MaximumDepthBinaryTree.TreeNode(),
-                            new MaximumDepthBinaryTree.TreeNode(2)
+                    new TreeNode(1,
+                            new TreeNode(),
+                            new TreeNode(2)
                     ),
                     2
             )
@@ -30,6 +31,6 @@ class MaximumDepthBinaryTreeTest {
         assertEquals(testCase.expected, MaximumDepthBinaryTree.maxDepth(testCase.root));
     }
 
-    record TestCase(MaximumDepthBinaryTree.TreeNode root, int expected) {
+    record TestCase(TreeNode root, int expected) {
     }
 }
