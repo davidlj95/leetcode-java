@@ -15,8 +15,14 @@ class KthLargestElementArrayTest {
 
     @ParameterizedTest
     @FieldSource("TEST_CASES")
-    void findKthLargest(TestCase testCase) {
-        assertEquals(testCase.expected, KthLargestElementArray.findKthLargest(testCase.nums, testCase.k));
+    void byInsertingInOrder(TestCase testCase) {
+        assertEquals(testCase.expected, KthLargestElementArray.byInsertingInOrder(testCase.nums, testCase.k));
+    }
+
+    @ParameterizedTest
+    @FieldSource("TEST_CASES")
+    void byMinHeap(TestCase testCase) {
+        assertEquals(testCase.expected, KthLargestElementArray.byMinHeap(testCase.nums, testCase.k));
     }
 
     record TestCase(int[] nums, int k, int expected) {
