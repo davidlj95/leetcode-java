@@ -4,33 +4,24 @@ import com.davidlj95.leetcode.structures.TreeNode;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.FieldSource;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MaximumDepthBinaryTreeTest {
     @SuppressWarnings("unused")
     static final TestCase[] TEST_CASES = {
-            new TestCase(
-                    new TreeNode(3,
-                            new TreeNode(9),
-                            new TreeNode(20,
-                                    new TreeNode(15),
-                                    new TreeNode(7)
-                            )), 3),
-            new TestCase(
-                    new TreeNode(1,
-                            new TreeNode(),
-                            new TreeNode(2)
-                    ),
-                    2
-            )
+            new TestCase(Arrays.asList(3, 9, 20, null, null, 15, 7), 3),
+            new TestCase(Arrays.asList(1, null, 2), 2),
     };
 
     @ParameterizedTest
     @FieldSource("TEST_CASES")
     void maxDepth(TestCase testCase) {
-        assertEquals(testCase.expected, MaximumDepthBinaryTree.maxDepth(testCase.root));
+        assertEquals(testCase.expected, MaximumDepthBinaryTree.maxDepth(TreeNode.fromIntCollection(testCase.root)));
     }
 
-    record TestCase(TreeNode root, int expected) {
+    record TestCase(Collection<Integer> root, int expected) {
     }
 }

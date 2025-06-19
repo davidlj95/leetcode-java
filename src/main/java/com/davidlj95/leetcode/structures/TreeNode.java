@@ -1,6 +1,7 @@
 package com.davidlj95.leetcode.structures;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class TreeNode {
     public int val;
@@ -18,6 +19,25 @@ public class TreeNode {
         this.val = val;
         this.left = left;
         this.right = right;
+    }
+
+    public static TreeNode fromIntCollection(Collection<Integer> vals) {
+        if (vals.isEmpty()) return null;
+        var size = vals.size();
+        var nodes = vals.stream().map(x -> x != null ? new TreeNode(x) : null).toList();
+        for (var i = 0; i < size; i++) {
+            var node = nodes.get(i);
+            if (node == null) continue;
+            var childIndex = 2 * i + 1;
+            if (childIndex < size) {
+                node.left = nodes.get(childIndex);
+            }
+            childIndex++;
+            if (childIndex < size) {
+                node.right = nodes.get(childIndex);
+            }
+        }
+        return nodes.get(0);
     }
 
     @Override
