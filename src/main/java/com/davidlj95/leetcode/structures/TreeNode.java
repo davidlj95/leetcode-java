@@ -74,16 +74,20 @@ public class TreeNode {
                 continue;
             }
             ints.add(node.val);
-            nodes.add(node.left);
-            nodes.add(node.right);
             nodesToProcess--;
+
+            nodes.add(node.left);
             if (node.left != null) nodesToProcess++;
+
+            nodes.add(node.right);
             if (node.right != null) nodesToProcess++;
         }
-        var lastIndex = ints.size() - 1;
-        while (ints.get(lastIndex) == null) {
-            ints.remove(lastIndex);
-            lastIndex--;
+
+        for (var i = ints.size() - 1; i >= 0; i--) {
+            if (ints.get(i) != null) {
+                ints.subList(i + 1, ints.size()).clear();
+                break;
+            }
         }
         return ints;
     }
