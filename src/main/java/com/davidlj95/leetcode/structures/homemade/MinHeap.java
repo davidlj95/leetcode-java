@@ -48,7 +48,7 @@ public class MinHeap<T extends Comparable<T>> extends AbstractQueue<T> {
         rootNodeRef.setValue(lastNodeRef.getValue());
         lastNodeRef.remove();
 
-        var nodeRef = rootNodeRef;
+        @SuppressWarnings("UnnecessaryLocalVariable") var nodeRef = rootNodeRef;
         while (nodeRef.getLeftChild() != null || nodeRef.getRightChild() != null) {
             var leftRef = nodeRef.getLeftChild();
             var rightRef = nodeRef.getRightChild();
@@ -85,8 +85,8 @@ public class MinHeap<T extends Comparable<T>> extends AbstractQueue<T> {
             return heap.get(index);
         }
 
-        private T setValue(T value) {
-            return heap.set(index, value);
+        private void setValue(T value) {
+            heap.set(index, value);
         }
 
         private HeapNodeRef getParent() {
