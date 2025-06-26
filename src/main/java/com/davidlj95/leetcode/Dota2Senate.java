@@ -5,6 +5,7 @@ import java.util.Queue;
 
 // https://leetcode.com/problems/dota2-senate/ (649)
 public class Dota2Senate {
+    @SuppressWarnings("unused")
     public static String predictPartyVictory(String senate) {
         return doubleQueue(senate);
     }
