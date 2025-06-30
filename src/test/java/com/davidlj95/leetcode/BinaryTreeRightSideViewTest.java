@@ -31,6 +31,12 @@ class BinaryTreeRightSideViewTest {
         assertEquals(Arrays.stream(testCase.expected).boxed().toList(), BinaryTreeRightSideView.withClassicApis(TreeNode.fromIntCollection(testCase.input)));
     }
 
+    @ParameterizedTest
+    @FieldSource("TEST_CASES")
+    void withRecursion(TestCase testCase) {
+        assertEquals(Arrays.stream(testCase.expected).boxed().toList(), BinaryTreeRightSideView.withRecursion(TreeNode.fromIntCollection(testCase.input)));
+    }
+
     record TestCase(Collection<Integer> input, int[] expected) {
     }
 

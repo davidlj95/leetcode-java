@@ -44,4 +44,22 @@ public class BinaryTreeRightSideView {
         }
         return values;
     }
+
+    public static List<Integer> withRecursion(TreeNode root) {
+        if (root == null) return List.of();
+        var result = new ArrayList<Integer>();
+        visitRightSide(root, result, 0);
+        return result;
+    }
+
+    private static void visitRightSide(TreeNode node, List<Integer> result, int depth) {
+        if (node == null) return;
+
+        if (result.size() == depth) {
+            result.add(node.val);
+        }
+
+        visitRightSide(node.right, result, depth + 1);
+        visitRightSide(node.left, result, depth + 1);
+    }
 }
