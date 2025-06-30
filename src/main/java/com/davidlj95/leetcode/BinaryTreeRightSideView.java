@@ -3,9 +3,9 @@ package com.davidlj95.leetcode;
 import com.davidlj95.leetcode.structures.TreeNode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Stream;
 
 public class BinaryTreeRightSideView {
     public static List<Integer> rightSideView(TreeNode root) {
@@ -15,9 +15,7 @@ public class BinaryTreeRightSideView {
         while (!nodes.isEmpty()) {
             values.add(nodes.get(nodes.size() - 1).val);
             nodes = nodes.stream()
-                    .map(node -> Arrays.asList(node.left, node.right))
-                    .flatMap(List::stream)
-                    .filter(Objects::nonNull)
+                    .flatMap(node -> Stream.of(node.left, node.right).filter(Objects::nonNull))
                     .toList();
         }
         return values;
