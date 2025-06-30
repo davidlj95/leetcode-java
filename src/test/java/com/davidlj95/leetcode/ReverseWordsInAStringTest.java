@@ -19,6 +19,12 @@ class ReverseWordsInAStringTest {
         assertEquals(testCase.expected, ReverseWordsInAString.trimSeparateAndBuild(testCase.input));
     }
 
+    @ParameterizedTest
+    @FieldSource("TEST_CASES")
+    void loopAndPrepend(TestCase testCase) {
+        assertEquals(testCase.expected, ReverseWordsInAString.loopAndPrepend(testCase.input));
+    }
+
     record TestCase(String input, String expected) {
     }
 

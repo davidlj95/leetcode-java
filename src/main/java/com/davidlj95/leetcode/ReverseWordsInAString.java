@@ -15,4 +15,23 @@ public class ReverseWordsInAString {
         }
         return output.substring(0, output.length() - 1);
     }
+
+    public static String loopAndPrepend(String s) {
+        var SPACE = ' ';
+        var chars = s.toCharArray();
+        var output = new StringBuilder();
+        int lastWordStart = -1;
+        for (var i = 0; i < chars.length; i++) {
+            var ch = chars[i];
+            if (ch == SPACE) {
+                if (lastWordStart == -1) continue;
+                output.insert(0, SPACE).insert(0, s.substring(lastWordStart, i));
+                lastWordStart = -1;
+                continue;
+            }
+            if (lastWordStart == -1) lastWordStart = i;
+        }
+        if (lastWordStart != -1) output.insert(0, SPACE).insert(0, s.substring(lastWordStart));
+        return output.substring(0, output.length() - 1);
+    }
 }
