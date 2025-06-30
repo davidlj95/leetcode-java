@@ -21,8 +21,14 @@ class BinaryTreeRightSideViewTest {
 
     @ParameterizedTest
     @FieldSource("TEST_CASES")
-    void rightSideView(TestCase testCase) {
-        assertEquals(Arrays.stream(testCase.expected).boxed().toList(), BinaryTreeRightSideView.rightSideView(TreeNode.fromIntCollection(testCase.input)));
+    void withStreamApis(TestCase testCase) {
+        assertEquals(Arrays.stream(testCase.expected).boxed().toList(), BinaryTreeRightSideView.withStreamApis(TreeNode.fromIntCollection(testCase.input)));
+    }
+
+    @ParameterizedTest
+    @FieldSource("TEST_CASES")
+    void withClassicApis(TestCase testCase) {
+        assertEquals(Arrays.stream(testCase.expected).boxed().toList(), BinaryTreeRightSideView.withClassicApis(TreeNode.fromIntCollection(testCase.input)));
     }
 
     record TestCase(Collection<Integer> input, int[] expected) {
